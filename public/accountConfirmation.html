@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vérification de l'adresse e-mail</title>
+    <style>
+      /* Styles de réinitialisation pour une mise en page cohérente */
+      body,
+      table,
+      td,
+      p,
+      a,
+      span {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      td {
+        padding: 20px;
+        text-align: left;
+      }
+      /* Styles pour le contenu de l'e-mail */
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .header {
+        background-color: #3498db;
+        color: #ffffff;
+        padding: 10px 0;
+        text-align: center;
+      }
+      .logo {
+        text-align: center;
+      }
+      .content {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #3498db;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+      .footer {
+        text-align: center;
+        margin-top: 20px;
+        color: #777777;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td>
+          <div class="container">
+            <div class="header">
+              <h1>Vérification de l'adresse e-mail</h1>
+            </div>
+            <!-- Logo -->
+            <div class="logo">
+              <img
+                alt="logo"
+                src="https://qr-server-6xmb.onrender.com/images/logo2.png"
+                style="
+                  height: auto;
+                  display: block;
+                  border: 0;
+                  max-width: 125px;
+                  width: 100%;
+                "
+                title="your-logo"
+                width="125"
+              />
+            </div>
+            <div class="content">
+              <p>Bonjour,</p>
+              <p>
+                Merci de vous être inscrit sur notre plateforme. Pour finaliser
+                votre inscription, veuillez cliquer sur le bouton ci-dessous
+                pour vérifier votre adresse e-mail :
+              </p>
+              <a class="button" href="{resetLink}">Vérifier l'e-mail</a>
+              <p>
+                Si vous n'avez pas créé de compte sur notre plateforme, vous
+                pouvez ignorer cet e-mail.
+              </p>
+            </div>
+            <div class="footer">
+              <p>&copy; 2023 Votre Nom de Société</p>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
