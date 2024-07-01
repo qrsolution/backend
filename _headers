@@ -1,0 +1,4 @@
+/api/*
+  Access-Control-Allow-Origin: https://qrsolution.fr
+  Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
+  Access-Control-Allow-Headers: Content-Type, Authorization
