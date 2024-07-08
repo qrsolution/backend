@@ -5,13 +5,15 @@ const fs = require("fs");
 const path = require("path");
 
 const sendResetEmail = async (email, resetLink, expirationTime, type) => {
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: "qrsolution548",
-      pass: "pupihdlbdzdbkotr",
-    },
-  });
+    const transporter = nodemailer.createTransport({
+      host: 'smtp.hostinger.com',
+       port: 465,
+      secure: true, 
+      auth: {
+          user: 'connexion@qrsolution.fr',
+          pass: 'Connexion2024.',
+      },
+    });
 
   const htmlTemplate = fs.readFileSync(
     path.join(__dirname, "../public/resetPassword.html"),
@@ -34,7 +36,7 @@ const sendResetEmail = async (email, resetLink, expirationTime, type) => {
     .replace("{buttonText}", buttonText);
 
   const mailOptions = {
-    from: "no-reply@qrsolution.com",
+    from: "connexion@qrsolution.fr",
     to: email,
     subject: text,
     html: emailContentWithExpiration,
@@ -56,7 +58,7 @@ module.exports = {
 
       const expirationTime = Date.now() + 600000;
 
-      const resetLink = `https://qr-solution-beta.netlify.app/reset-password?email=${encodeURIComponent(
+      const resetLink = `https://qrsolution.fr/reset-password?email=${encodeURIComponent(
         email
       )}&expiration=${expirationTime}`;
 
