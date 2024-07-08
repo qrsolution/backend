@@ -5,10 +5,12 @@ const path = require("path");
 const sendVerificationEmail = async (email, verificationToken) => {
   try {
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: 'smtp.hostinger.com',
+       port: 465,
+      secure: true, 
       auth: {
-        user: "qrsolution548",
-        pass: "pupihdlbdzdbkotr",
+          user: 'connexion@qrsolution.fr',
+          pass: 'Connexion2024.',
       },
     });
 
@@ -22,7 +24,7 @@ const sendVerificationEmail = async (email, verificationToken) => {
     const content = htmlTemplate.replace("{resetLink}", verificationLink);
 
     const mailOptions = {
-      from: "qrsolution548@gmail.com",
+      from: "connexion@qrsolution.fr",
       to: email,
       subject: "Email Verification",
       html: content,
@@ -41,10 +43,12 @@ const sendContactUsEmail = async (email, mailText, name, message) => {
   console.log(email);
   try {
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: 'smtp.hostinger.com',
+       port: 465,
+      secure: true, 
       auth: {
-        user: "qrsolution548",
-        pass: "pupihdlbdzdbkotr",
+          user: 'connexion@qrsolution.fr',
+          pass: 'Connexion2024.',
       },
     });
 
@@ -68,10 +72,10 @@ const sendContactUsEmail = async (email, mailText, name, message) => {
         : user;
 
     const mailOptions = {
-      from: "qrsolution548@gmail.com",
+      from: "connexion@qrsolution.fr",
       to: email,
       subject:
-        email === "qrsolution548@gmail.com"
+        email === "connexion@qrsolution.fr"
           ? ` Nouvelle soumission de formulaire de contact - ${name}`
           : "Merci de nous avoir contactés !",
       html: content,
