@@ -9,17 +9,13 @@ const { sendVerificationEmail } = require("../middleware/sendEmail");
 module.exports = {
   async register(req, res) {
     try {
-      const { userName, email, password, userRole , secretLIC } = req.body;
+      const { userName, email, password, userRole  } = req.body;
 
       const existingUser = await User.findOne({
         $or: [{ userName }, { email }],
       });
       if (existingUser) {
         return res.status(400).json({ error: "L'utilisateur existe déjà" });
-      }
-
-      if( secretLIC !== process.env.SECRETLIC ){
-        res.status(403).json({ error: "code intern est invalide" });
       }
 
       const hashedPassword = await bcrypt.hash(password, 10);
